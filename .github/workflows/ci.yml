@@ -1,0 +1,29 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+
+      # TEMPLATE: add the toolchain step for your stack here, for example
+      # actions/setup-node or actions/setup-python, pinned to your version.
+
+      - name: Install dependencies
+        run: scripts/check.sh setup
+
+      - name: Lint, test, and build
+        run: scripts/check.sh all
+        # TEMPLATE: once scripts/project.conf is filled in, uncomment the two
+        # lines below so that an unconfigured step fails the build.
+        # env:
+        #   CHECK_STRICT: "1"
