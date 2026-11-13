@@ -29,7 +29,10 @@ on safe tasks without stopping to ask.
    repository.
 2. Make sure the Claude GitHub App has access to the new repository:
    https://claude.ai/connect-github
-3. Edit `scripts/project.conf` with your real commands.
+3. Edit `scripts/project.conf` with your real commands. The template ships
+   with an example test (`tests/check_test.sh`, which checks `scripts/check.sh`
+   itself) wired to `TEST_CMD`; replace it with your real test command. Lint,
+   build, and setup are still empty.
 4. Add your toolchain step to `.github/workflows/ci.yml`, and turn on
    `CHECK_STRICT` there.
 5. Fill in the two `TEMPLATE` sections in `CLAUDE.md`.
