@@ -37,7 +37,9 @@ on safe tasks without stopping to ask.
    `CHECK_STRICT` there.
 5. Fill in the two `TEMPLATE` sections in `CLAUDE.md`.
 6. In GitHub, protect the default branch: require a pull request and require
-   the `checks` status to pass before merging.
+   the `checks` status to pass before merging. Do this in every new
+   repository. Do not assume the template's own branch protection carries
+   over; check under Settings, then Branches.
 
 ## Using it in a session
 
